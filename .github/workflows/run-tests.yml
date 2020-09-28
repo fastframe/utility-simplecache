@@ -38,10 +38,10 @@ jobs:
         run: vendor/bin/phpunit
 
       - name: Send Slack notification
-          uses: 8398a7/action-slack@v2
-          if: always()
-          with:
-            status: ${{ job.status }}
-            author_name: ${{ github.actor }}
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: 8398a7/action-slack@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          author_name: ${{ github.actor }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
