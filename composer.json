@@ -1,0 +1,51 @@
+{
+  "name": "fastframe/utility-simplecache",
+  "description": "FastFrame SimpleCache Utilities",
+  "license": "MIT",
+  "keywords": [
+    "FastFrame",
+    "simple-cache"
+  ],
+  "authors": [
+    {
+      "name": "David Lundgren",
+      "email": "dlundgren@syberisle.net"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "FastFrame\\Utility\\SimpleCache\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FastFrame\\Utility\\SimpleCache\\": "tests"
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "psr/simple-cache": "^1.0"
+  },
+  "require-dev": {
+    "phploc/phploc": "^5.0",
+    "phpstan/phpstan": "^0.12.4",
+    "phpunit/phpunit": "^8.5",
+    "roave/security-advisories": "dev-master",
+    "sebastian/phpcpd": "^4.1",
+    "squizlabs/php_codesniffer": "^3.5",
+    "syberisle/coding-standards": "^2.0"
+  },
+  "scripts": {
+    "test": "@php vendor/bin/phpunit --colors=always",
+    "test-coverage": "@php vendor/bin/phpunit --colors=always --coverage-html=tmp/html-coverage",
+    "sniff": "@php vendor/bin/phpcs src",
+    "format": "@php vendor/bin/phpcbf",
+    "phpdoc": "docker run --rm -v $(pwd):/data phpdoc/phpdoc",
+    "phploc": "@php vendor/bin/phploc src > tmp/phploc.txt",
+    "phpcpd": "@php vendor/bin/phpcpd src tests",
+    "phpstan": "@php -d memory_limit=-1 vendor/bin/phpstan analyse src"
+  }
+}
