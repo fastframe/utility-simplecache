@@ -1,8 +1,8 @@
 # FastFrame SimpleCache Utilities
 
-Provides `Null` and `Memory` based SimpleCache implementations.
+Provides `Blackhole` and `Memory` based SimpleCache implementations.
 
-- `Null` is useful for when you don't care about caching, but need to provide an instance.
+- `Blackhole` is useful for when you don't care about caching, but need to provide an instance.
 - `Memory` is useful during tests when you need a cache but not a full caching system.
 
 ## Installation
