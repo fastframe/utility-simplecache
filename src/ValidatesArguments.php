@@ -31,10 +31,14 @@ trait ValidatesArguments
 				return $key;
 			}
 		}
+		elseif (is_object($key)) {
+			$type = get_class($key);
+		}
+		elseif (is_array($key)) {
+			$type = '(array)';
+		}
 
-		$type = get_debug_type($key);
-
-		throw new InvalidArgument("Invalid key: " . ($type === 'string' ? $key : $type));
+		throw new InvalidArgument("Invalid key: " . ($type ?? $key));
 	}
 
 	/**
